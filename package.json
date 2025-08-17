@@ -1,0 +1,32 @@
+{
+  "name": "amazon-sp-api-dashboard",
+  "version": "1.0.0",
+  "description": "Modern Amazon SP-API Dashboard with LWA OAuth 2.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --parallel dev",
+    "build": "pnpm --filter './packages/*' build",
+    "start": "pnpm --parallel start",
+    "lint": "pnpm --parallel lint",
+    "test": "pnpm --parallel test",
+    "db:generate": "pnpm --filter @amazon-dashboard/backend db:generate",
+    "db:migrate": "pnpm --filter @amazon-dashboard/backend db:migrate",
+    "db:studio": "pnpm --filter @amazon-dashboard/backend db:studio",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
